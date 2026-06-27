@@ -1,0 +1,273 @@
+/* 全体の共通設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.7;
+}
+
+/* ナビゲーションバー */
+.main-header {
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #d946ef; /* 銭湯の「のれん」をイメージした華やかなカラー */
+}
+
+.nav-links a {
+    color: #4b5563;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #0284c7; /* 水を連想させるブルー */
+}
+
+/* メインビジュアル（ヒーローセクション） */
+.hero-section {
+    background: linear-gradient(rgba(2, 132, 199, 0.6), rgba(2, 132, 199, 0.4)), 
+                url('https://images.unsplash.com/photo-1543967625-703759a296e8?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    /* ※上のURLはダミー画像です。本来はここに銭湯や富士山のペンキ絵の写真が入ると最高です！ */
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: #ea580c; /* 温かみのあるオレンジ */
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-cta:hover {
+    background-color: #c2410c;
+    transform: translateY(-2px);
+}
+
+/* セクションの基本設定 */
+.section-container {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.bg-light {
+    background-color: #f0fdf4; /* 爽やかな薄い緑色（温泉地の清潔感） */
+    max-width: 100%;
+    padding-left: calc((100% - 1000px) / 2 + 20px);
+    padding-right: calc((100% - 1000px) / 2 + 20px);
+}
+
+@media (max-width: 1040px) {
+    .bg-light {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    position: relative;
+    color: #1e293b;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #0284c7;
+    margin: 10px auto 0;
+}
+
+/* こだわり（3カラム） */
+.about-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.about-card {
+    flex: 1;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.about-card h4 {
+    font-size: 1.2rem;
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+/* お風呂の紹介（リスト風） */
+.bath-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bath-item {
+    background: #fff;
+    padding: 25px;
+    border-left: 6px solid #0284c7;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.bath-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #0284c7;
+}
+
+/* 料金・営業情報（テーブル） */
+.info-tables {
+    display: flex;
+    gap: 40px;
+}
+
+.info-box {
+    flex: 1;
+}
+
+.info-box h4 {
+    font-size: 1.3rem;
+    color: #1e293b;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #cbd5e1;
+    padding-bottom: 5px;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table th, .info-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+.info-table th {
+    font-weight: bold;
+    color: #4b5563;
+    width: 40%;
+}
+
+/* アクセス */
+.access-content {
+    text-align: center;
+}
+
+.address {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.route {
+    margin-bottom: 30px;
+    color: #4b5563;
+}
+
+.map-placeholder {
+    background-color: #cbd5e1;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    color: #475569;
+    font-weight: bold;
+}
+
+/* フッター */
+.main-footer {
+    background-color: #1e293b;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 1rem;
+}
+
+.copyright {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* レスポンシブ対応（スマホで見やすくする設定） */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links a {
+        margin: 0 10px;
+    }
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    .about-grid, .info-tables {
+        flex-direction: column;
+        gap: 20px;
+    }
+}4

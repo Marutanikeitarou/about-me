@@ -1,0 +1,368 @@
+/* ==========================================================================
+   RESET & BASE VARIABLES (混沌の始まり)
+   ========================================================================== */
+:root {
+    --bg-main: #0a0a12;
+    --neon-pink: #ff007f;
+    --neon-blue: #00f0ff;
+    --neon-green: #39ff14;
+    --neon-yellow: #fffb00;
+    --matrix-dark: #020202;
+    --gradient-chaos: linear-gradient(45deg, #ff0055, #00ffaa, #00a2ff, #ffb700);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: #ffffff;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    overflow-x: hidden;
+    background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a12 100%);
+}
+
+/* ==========================================================================
+   ULTRA HEADER & GLITCH ANIMATION
+   ========================================================================== */
+.ultra-header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 5px solid var(--neon-pink);
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+/* 意味のないネストへの超装飾 */
+.nested-1 { padding: 5px; border: 1px solid var(--neon-blue); }
+.nested-2 { padding: 5px; border: 1px solid var(--neon-green); }
+.nested-3 { padding: 5px; border: 1px solid var(--neon-yellow); }
+.nested-4 { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px;
+}
+
+/* グリッチテキスト効果 */
+.glitch-text {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 0.05em 0 0 rgba(255,0,127,.75), -0.025em -0.05em 0 rgba(0,240,255,.75), 0.025em 0.05em 0 rgba(57,255,20,.75);
+    animation: glitch 500ms infinite;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 1px 2px 0 red, -1px -2px 0 blue; }
+    20% { text-shadow: -2px 1px 0 green, 2px -1px 0 pink; }
+    40% { text-shadow: 1px -1px 0 yellow, -1px 2px 0 cyan; }
+    60% { text-shadow: 2px 2px 0 magenta, -2px -2px 0 orange; }
+    80% { text-shadow: -1px 2px 0 red, 1px -1px 0 blue; }
+    100% { text-shadow: 1px 1px 0 white, -1px -1px 0 black; }
+}
+
+.mega-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-item {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-item:hover {
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 20px var(--neon-blue);
+    transform: scale(1.2) rotate(-3deg);
+}
+
+/* ==========================================================================
+   SECTION 1: GRID OVERWHELMING (グリッドの暴走)
+   ========================================================================== */
+.section-grid-chaos {
+    padding: 100px 50px;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(20,20,40,0.8) 100%);
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--neon-green);
+    text-shadow: 0 0 10px var(--neon-green);
+}
+
+.grid-container-overwhelming {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
+    perspective: 1000px;
+}
+
+.grid-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255,255,255,0.1);
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+/* 30個のアイテムにランダムっぽい個別の動きをCSSだけで付与 */
+.grid-item:nth-child(odd) { background: rgba(255, 0, 127, 0.1); border-color: var(--neon-pink); }
+.grid-item:nth-child(even) { background: rgba(0, 240, 255, 0.1); border-color: var(--neon-blue); }
+.grid-item:nth-child(3n) { transform: rotateX(20deg); }
+.grid-item:nth-child(5n) { animation: pulse 2s infinite alternate; }
+
+.grid-item:hover {
+    transform: scale(1.15) translateZ(50px) rotateY(180deg);
+    background: var(--gradient-chaos);
+    color: #000;
+    box-shadow: 0 20px 50px rgba(255,255,255,0.5);
+}
+
+@keyframes pulse {
+    0% { opacity: 0.4; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1.05); }
+}
+
+/* ==========================================================================
+   SECTION 2: 3D MATRIX (立体空間地獄)
+   ========================================================================== */
+.section-3d-matrix {
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    position: relative;
+}
+
+.scene-3d {
+    width: 300px;
+    height: 300px;
+    perspective: 1200px;
+}
+
+.cube-hyper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateCube 10s infinite linear;
+}
+
+@keyframes rotateCube {
+    0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    100% { transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg); }
+}
+
+.face {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 4px solid #fff;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 50px rgba(0, 240, 255, 0.5);
+}
+
+.front  { transform: translateZ(150px); border-color: var(--neon-pink); color: var(--neon-pink); }
+.back   { transform: rotateY(180deg) translateZ(150px); border-color: var(--neon-blue); color: var(--neon-blue); }
+.left   { transform: rotateY(-90deg) translateZ(150px); border-color: var(--neon-green); color: var(--neon-green); }
+.right  { transform: rotateY(90deg) translateZ(150px); border-color: var(--neon-yellow); color: var(--neon-yellow); }
+.top    { transform: rotateX(90deg) translateZ(150px); border-color: #fff; color: #fff; }
+.bottom { transform: rotateX(-90deg) translateZ(150px); border-color: #ff0000; color: #ff0000; }
+
+/* ==========================================================================
+   SECTION 3: BUTTON HELL (ボタン大量消費)
+   ========================================================================== */
+.section-button-hell {
+    padding: 100px 20px;
+    background: #111122;
+}
+
+.button-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-chaos {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s;
+}
+
+/* 個別ボタンに狂ったスタイルを大量適用 */
+.c1:hover { background: red; filter: blur(2px); }
+.c2:hover { transform: skewX(45deg); background: orange; }
+.c3:hover { border-radius: 50%; transform: scale(0.5); }
+.c4:hover { background: linear-gradient(to right, blue, pink); }
+.c5:hover { box-shadow: inset 0 0 100px inset white; color: black; }
+.c6:hover { animation: shake 0.1s infinite; }
+.c7:hover { transform: translateY(-50px); opacity: 0; }
+.c8:hover { outline: 20px solid var(--neon-green); }
+.c9:hover { transform: rotate(720deg); }
+.c10:hover { filter: invert(1); }
+
+/* 省略せずアホみたいにキーフレーム追加 */
+@keyframes shake {
+    0% { transform: translate(2px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(0px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(2px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(2px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* ==========================================================================
+   SECTION 4: TABLE DISASTER (崩壊テーブル)
+   ========================================================================== */
+.section-table-disaster {
+    padding: 80px 20px;
+    background: var(--matrix-dark);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 3px dashed var(--neon-yellow);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: monospace;
+    font-size: 1.2rem;
+}
+
+th, td {
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 20px;
+    text-align: left;
+}
+
+th {
+    background: #222;
+    color: var(--neon-yellow);
+}
+
+tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+tr:hover { background: rgba(255, 251, 0, 0.15); }
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.alive { background: green; }
+.dead { background: red; animation: blink 0.5s infinite alternate; }
+.warning { background: orange; }
+.critical { background: purple; text-decoration: underline; }
+.unknown { background: gray; }
+
+@keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* ==========================================================================
+   SECTION 5: FINAL BOSS (ラスボス・ローダー)
+   ========================================================================== */
+.section-final-boss {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, #0a0a12, #0a0a12 2px, #151525 2px, #151525 4px);
+    z-index: 1;
+}
+
+.boss-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.boss-title {
+    font-size: 8rem;
+    color: #ff0000;
+    text-shadow: 0 0 30px #ff0000;
+    margin-bottom: 20px;
+    animation: zoomInOut 4s infinite ease-in-out;
+}
+
+@keyframes zoomInOut {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3) rotate(5deg); filter: hue-rotate(180deg); }
+}
+
+.loader-hyper {
+    width: 150px;
+    height: 150px;
+    border: 20px solid rgba(255,255,255,0.1);
+    border-top: 20px solid var(--neon-pink);
+    border-bottom: 20px solid var(--neon-blue);
+    border-radius: 50%;
+    margin: 40px auto 0;
+    animation: spinHyper 0.5s infinite linear;
+}
+
+@keyframes spinHyper {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.hyper-footer {
+    background: #000;
+    text-align: center;
+    padding: 50px;
+    border-top: 2px solid #333;
+    color: #666;
+    font-size: 1rem;
+}

@@ -1,0 +1,214 @@
+/* ==========================================================================
+   ページ全体を画面の真ん中（中央）に寄せる設定
+   ========================================================================== */
+.content-main {
+  max-width: 900px;   /* ページの横幅をちょうどいい広さに制限 */
+  margin-left: auto;  /* 左右の余白を自動調整して真ん中に寄せる */
+  margin-right: auto; 
+  padding: 0 20px;    /* 画面の端っこに文字がくっつかないためのお守り */
+}
+
+/* ==========================================================================
+   ページタイトル（「私の趣味」）
+   ========================================================================== */
+
+.page-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333333;
+  text-align: left;  /* 左寄せにする */
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+
+/* ==========================================================================
+   趣味ページ：文字サイズとレイアウトの最終調整
+   ========================================================================== */
+
+/* ページ全体を少し下に下げるための余白 */
+body.sub-page {
+  padding-top: 50px; /* 上部に余白を追加してコンテンツを下に下げる */
+}
+
+/* 普通の文章を大きくする */
+body.sub-page p {
+  font-size: 18px;     
+  line-height: 1.8;    
+  color: #333333;
+  text-align: left; /* pタグ内のテキストは左寄せに戻す */
+}
+
+/* ==========================================================================
+   セクション全体の設定
+   ========================================================================== */
+
+.hobby-section {
+  margin-bottom: 60px;
+}
+
+.songs-section {
+  margin-bottom: 40px;
+}
+
+/* ==========================================================================
+   趣味コンテナのレイアウト設定
+   ========================================================================== */
+
+/* 趣味の説明と写真を並べるコンテナ */
+.hobby-container {
+  display: flex;       /* 横並びにする */
+  flex-wrap: wrap;     /* 画面が狭くなったら自動で折り返す */
+  gap: 40px;           /* 文字と写真の間のスキマ */
+  align-items: flex-start; /* 上下の位置を上に揃える */
+}
+
+/* タブレット以下の画面では積み重ねる */
+@media (max-width: 768px) {
+  .hobby-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+
+/* 趣味の説明部分 */
+.hobby-item {
+  flex: 1;
+  min-width: 280px;
+  text-align: left;
+}
+
+.hobby-item h2 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #333333;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.hobby-item p {
+  margin-bottom: 15px;
+}
+
+.hobby-item p:last-child {
+  margin-bottom: 0;
+}
+
+/* 趣味の写真部分 */
+.hobby-photo {
+  flex: 1;
+  min-width: 280px;
+  max-width: 380px;
+}
+
+.hobby-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hobby-photo img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================================================================
+   曲のリスト表示
+   ========================================================================== */
+
+.songs-intro {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333333;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+/* ジャンル別の曲リスト */
+.song-genre {
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.song-genre h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333333;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-left: 4px solid #0044cc;
+  padding-left: 12px;
+}
+
+/* 曲リストのスタイル */
+.song-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.song-list li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+  text-align: left;
+}
+
+.song-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* リストの点をカスタマイズ */
+.song-list li::before {
+  content: "♪";
+  position: absolute;
+  left: 0;
+  color: #0044cc;
+  font-weight: bold;
+}
+
+/* 曲名リンクのスタイル */
+a.song-link {
+  font-size: 17px;     
+  color: #0044cc !important;
+  text-decoration: underline !important;
+  font-weight: bold;   
+  display: inline-block;
+  transition: all 0.2s ease; 
+}
+
+/* ==========================================================================
+   カーソルを合わせたときの動き
+   ========================================================================== */
+
+a.song-link:hover {
+  color: #ff0000 !important;
+  text-decoration: underline !important;  
+  transform: translateX(5px);  
+}
+
+/* ==========================================================================
+   「戻るボタン」の設定
+   ========================================================================== */
+
+.back-link {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+  text-align: center;
+}
+
+.back-link a {
+  font-size: 17px;     
+  color: #0044cc !important;
+  text-decoration: underline;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.back-link a:hover {
+  color: #ff0000 !important;
+  transform: translateX(-5px);
+}

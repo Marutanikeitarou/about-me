@@ -1,0 +1,99 @@
+/* 全体のリセットと基本設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    background-color: #f5f7fa;
+    color: #333333;
+    line-height: 1.8;
+}
+
+/* ヘッダーのデザイン */
+.site-header {
+    background-color: #1e293b;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.site-header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+/* メインコンテナの設定 */
+.profile-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* 各セクションの枠組み */
+.profile-section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.profile-section h2 {
+    color: #1e293b;
+    border-left: 5px solid #3b82f6;
+    padding-left: 12px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* 音楽ジャンルの設定 */
+.music-genre {
+    margin-top: 25px;
+}
+
+.music-genre h3 {
+    font-size: 1.1rem;
+    color: #475569;
+    margin-bottom: 10px;
+}
+
+.music-list {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.music-list li {
+    margin-bottom: 12px;
+}
+
+/* ★リクエストのポイント：曲名とアーティストのリンク設定★ */
+.music-item {
+    color: #0044cc;               /* 文字を青色に */
+    text-decoration: none;        /* デフォルトの下線を消す */
+    border-bottom: 2px solid #0044cc; /* 下に青線のバーを表示 */
+    padding-bottom: 2px;          /* バーと文字の間の微調整 */
+    font-weight: bold;
+    transition: all 0.2s ease;    /* 色が滑らかに変わるアニメーション */
+}
+
+/* ★リクエストのポイント：マウスのカーソルを乗せたとき（ホバー時）★ */
+.music-item:hover {
+    color: #ff0000;               /* 文字を赤色に */
+    border-bottom-color: #ff0000; /* 下線のバーも赤色に */
+}
+
+/* フッターのデザイン */
+.site-footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #64748b;
+    font-size: 0.9rem;
+}
