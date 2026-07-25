@@ -9,11 +9,11 @@
 }
 
 /* ==========================================================================
-   ページタイトル（「私の趣味」）
+   ページタイトル（「私の特技」）
    ========================================================================== */
 
 .page-title {
-  font-size: 32px;
+  font-size: 45px;
   font-weight: bold;
   color: #333333;
   text-align: left;  /* 左寄せにする */
@@ -22,7 +22,7 @@
 }
 
 /* ==========================================================================
-   趣味ページ：文字サイズとレイアウトの最終調整
+   特技ページ：文字サイズとレイアウトの最終調整
    ========================================================================== */
 
 /* ページ全体を少し下に下げるための余白 */
@@ -32,7 +32,7 @@ body.sub-page {
 
 /* 普通の文章を大きくする */
 body.sub-page p {
-  font-size: 18px;     
+  font-size: 35px;     
   line-height: 1.8;    
   color: #333333;
   text-align: left; /* pタグ内のテキストは左寄せに戻す */
@@ -42,7 +42,7 @@ body.sub-page p {
    セクション全体の設定
    ========================================================================== */
 
-.hobby-section {
+.skill-section {
   margin-bottom: 60px;
 }
 
@@ -51,11 +51,11 @@ body.sub-page p {
 }
 
 /* ==========================================================================
-   趣味コンテナのレイアウト設定
+   特技コンテナのレイアウト設定
    ========================================================================== */
 
-/* 趣味の説明と写真を並べるコンテナ */
-.hobby-container {
+/* 特技の説明と写真を並べるコンテナ */
+.skill-container {
   display: flex;       /* 横並びにする */
   flex-wrap: wrap;     /* 画面が狭くなったら自動で折り返す */
   gap: 40px;           /* 文字と写真の間のスキマ */
@@ -64,20 +64,20 @@ body.sub-page p {
 
 /* タブレット以下の画面では積み重ねる */
 @media (max-width: 768px) {
-  .hobby-container {
+  .skill-container {
     flex-direction: column;
     gap: 25px;
   }
 }
 
-/* 趣味の説明部分 */
-.hobby-item {
+/* 特技の説明部分 */
+.skill-item {
   flex: 1;
   min-width: 280px;
   text-align: left;
 }
 
-.hobby-item h2 {
+.skill-item h2 {
   font-size: 26px;
   font-weight: bold;
   color: #333333;
@@ -86,22 +86,22 @@ body.sub-page p {
   text-align: left;
 }
 
-.hobby-item p {
+.skill-item p {
   margin-bottom: 15px;
 }
 
-.hobby-item p:last-child {
+.skill-item p:last-child {
   margin-bottom: 0;
 }
 
-/* 趣味の写真部分 */
-.hobby-photo {
+/* 特技の写真部分 */
+.skill-photo {
   flex: 1;
   min-width: 280px;
   max-width: 380px;
 }
 
-.hobby-photo img {
+.skill-photo img {
   width: 100%;
   height: auto;
   border-radius: 12px;
@@ -109,7 +109,7 @@ body.sub-page p {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hobby-photo img:hover {
+.skill-photo img:hover {
   transform: scale(1.05);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
@@ -119,7 +119,7 @@ body.sub-page p {
    ========================================================================== */
 
 .songs-intro {
-  font-size: 18px;
+  font-size: 42px;
   line-height: 1.8;
   color: #333333;
   text-align: left;
@@ -133,7 +133,7 @@ body.sub-page p {
 }
 
 .song-genre h3 {
-  font-size: 20px;
+  font-size: 44px;
   font-weight: bold;
   color: #333333;
   margin-top: 0;
@@ -171,7 +171,7 @@ body.sub-page p {
 
 /* 曲名リンクのスタイル */
 a.song-link {
-  font-size: 17px;     
+  font-size: 24px;     
   color: #0044cc !important;
   text-decoration: underline !important;
   font-weight: bold;   
@@ -194,18 +194,20 @@ a.song-link:hover {
    ========================================================================== */
 
 .back-link {
-  margin-top: 30px;
+  margin-top: 35px;
   padding-top: 20px;
   border-top: 2px solid #ddd;
   text-align: center;
 }
 
 .back-link a {
-  font-size: 17px;     
+  font-size: 28px;     
   color: #0044cc !important;
   text-decoration: underline;
   display: inline-block;
   transition: all 0.2s ease;
+  padding-bottom: 35px;     
+
 }
 
 .back-link a:hover {

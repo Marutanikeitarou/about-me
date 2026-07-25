@@ -1,81 +1,67 @@
-/* 1. 画面全体の高さを確保して、中身を真ん中に寄せる */
+/* 1. 画面全体の見た目を整える */
 body {
   margin: 0;
-  height: 100vh;           /* 画面の縦幅いっぱいに広げる */
+  padding: 0;
+  min-height: 100vh;         /* 画面の縦幅をしっかり確保 */
   display: flex;
-  justify-content: center; /* 横方向の真ん中 */
-  align-items: center;     /* 縦方向の真ん中 */
-  background-color: #ffffff; /* 背景色（お好みで変えてね） */
+  flex-direction: column;    /* 👈 ここを「column」にすることで、ヘッダーと文章が縦並びになります！ */
+  align-items: center;       /* 横方向の真ん中寄せ */
+  background-color: #ffffff; 
 }
 
-/* 2. ロゴとナビゲーションメニューの見た目を整える */
+/* 2. ロゴとナビゲーションメニューの配置 */
 .page-header {
-  text-align: center;      /* 中の要素をセンタリング */
-  
-  transform: translateY(-30%);
+  text-align: center;
+  margin-top: 5vh;          /* 画面の上側に少し余白を作る */
+  width: 100%;
 }
 
 .logo {
-  max-width: 400px;        /* ロゴの大きさが崩れないように（適宜調整してね） */
+  max-width: 700px;         /* ロゴの枠（画像）をかなり大きく */
+  width: 100%;              /* 画面が狭いときもはみ出さないお守り */
   height: auto;
-  margin-bottom: 30px;     /* ロゴとメニューの間の隙間 */
+  margin-bottom: 50px;      /* ロゴとメニューの間をどーんと広げる */
 }
 
+/* 3. ナビゲーションメニュー（リンク） */
 .main-nav {
-  list-style: none;        /* 点を消す（ress.min.cssで消えてると思うけど念のため） */
+  list-style: none;
   padding: 0;
-  margin: 0;
-  display: flex;           /* メニューを横並びにする */
-  gap: 20px;               /* メニュー同士の間隔 */
-  justify-content: center; /* 横並びにしたメニューを真ん中に寄せる */
+  margin: 0 0 60px 0;       /* 下側に少し多めの余白を作って、文章との間隔を空ける */
+  display: flex;
+  gap: 60px;                /* メニュー同士の間隔をがっつり広げて横幅を出す */
+  justify-content: center;
 }
 
-.main-nav a {
-  text-decoration: none;   /* リンクの下線を消す */
-  color: #333333;          /* 文字の色（お好みで変えてね） */
-  font-weight: bold;
-}
 .main-nav a {
   text-decoration: none;
   color: #333333;
   font-weight: bold;
-  font-size: 24px;  /* 👈 これを追加！好みの大きさに数値を調整してね */
-}
-.main-nav {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 40px;        /* 👈 さっきの 20px から 40px くらいに広げると見やすいかも */
-  justify-content: center;
-}
-.logo {
-  max-width: 700px;     /* 👈 ロゴの枠（画像）をかなり大きく！ */
-  width: 100%;          /* 画面が狭いときもはみ出さないお守り */
-  height: auto;
-  margin-bottom: 50px;  /* ロゴとメニューの間をどーんと広げる */
-}
-
-.main-nav {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 60px;            /* 👈 メニュー同士の間隔をがっつり広げて横幅を出す */
-  justify-content: center;
+  font-size: 36px;          /* 文字を大きく */
+  transition: color 0.1s ease; /* 0.1秒かけてふわっと色を変える設定 */
 }
 
 /* カーソルを合わせたときの変化 */
 .main-nav a:hover {
-  color: #0044cc; /* 👈 カーソルが乗ったときの青色（好きな青に変えてね！） */
+  color: #0044cc;           /* カーソルが乗ったときの青色 */
   text-decoration: underline; /* 下線を出す */
 }
-.main-nav a {
-  text-decoration: none;
+
+/* 4. 文章全体のスタイル（今回追加した main タグ用） */
+main {
+  max-width: 1000px;        /* 文章が横に広がりすぎないように制限 */
+  width: 90%;               /* スマホで見ても左右に少し隙間を作る */
+  margin-bottom: 100px;     /* フッターとの間の余白 */
+}
+
+main p {
+  font-size: 30px;          /* 文章の文字の大きさ（お好みで変えてね） */
+  line-height: 1.8;         /* 行と行の間の隙間を広げて読みやすく */
+  margin-bottom: 20px;      /* 段落（pタグ）ごとの隙間 */
   color: #333333;
-  font-weight: bold;
-  font-size: 36px;
-  
-  /* 👈 これを元々ある「.main-nav a」の中に1行追加してみて */
-  transition: color 0.1s ease; /* 0.3秒かけてふわっと色を変える設定 */
+}
+intro-text-box{
+  max-width: 800px;
+  margin: 40px auto;
+
 }
