@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   ページ全体・レイアウト
+   ========================================================================== */
+body.sub-page {
+  padding-top: 50px;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.content-main {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.page-title {
+  font-size: 45px;
+  font-weight: bold;
+  color: #333333;
+  text-align: left;
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+
+/* ==========================================================================
+   お問い合わせフォームのスタイル
+   ========================================================================== */
+.contact-section {
+  margin-bottom: 60px;
+}
+
+.contact-form {
+  background-color: #f9f9f9;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+.form-group {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+/* 必須マークの装飾 */
+.required {
+  background-color: #ff0000;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* 入力欄（テキスト入力・エリア共通） */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+/* 入力欄にカーソルが当たった時 */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #0044cc;
+}
+
+/* 送信ボタンエリア */
+.form-submit {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.form-submit button {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #0044cc;
+  padding: 15px 50px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form-submit button:hover {
+  background-color: #002aa8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 68, 204, 0.3);
+}
+
+/* ==========================================================================
+   トップページに戻るボタン＆下部余白
+   ========================================================================== */
+.back-link {
+  margin-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 120px;
+  border-top: 2px solid #ddd;
+  text-align: center;
+}
+
+.back-link a {
+  font-size: 28px;
+  color: #0044cc !important;
+  text-decoration: underline;
+  display: inline-block;
+  padding: 10px 0;
+  transition: all 0.2s ease;
+}
+
+.back-link a:hover {
+  color: #ff0000 !important;
+  transform: translateX(-5px);
+}

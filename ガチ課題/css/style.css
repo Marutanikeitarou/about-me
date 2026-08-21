@@ -1,35 +1,37 @@
+@charset "UTF-8";
+
 /* 1. 画面全体の見た目を整える */
 body {
   margin: 0;
   padding: 0;
-  min-height: 100vh;         /* 画面の縦幅をしっかり確保 */
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;    /* 👈 ここを「column」にすることで、ヘッダーと文章が縦並びになります！ */
-  align-items: center;       /* 横方向の真ん中寄せ */
+  flex-direction: column;
+  align-items: center;
   background-color: #ffffff; 
 }
 
 /* 2. ロゴとナビゲーションメニューの配置 */
 .page-header {
   text-align: center;
-  margin-top: 5vh;          /* 画面の上側に少し余白を作る */
+  margin-top: 5vh;
   width: 100%;
 }
 
 .logo {
-  max-width: 700px;         /* ロゴの枠（画像）をかなり大きく */
-  width: 100%;              /* 画面が狭いときもはみ出さないお守り */
+  max-width: 700px;
+  width: 100%;
   height: auto;
-  margin-bottom: 50px;      /* ロゴとメニューの間をどーんと広げる */
+  margin-bottom: 50px;
 }
 
-/* 3. ナビゲーションメニュー（リンク） */
+/* 3. ナビゲーションメニュー（上の横並びメニュー） */
 .main-nav {
   list-style: none;
   padding: 0;
-  margin: 0 0 60px 0;       /* 下側に少し多めの余白を作って、文章との間隔を空ける */
+  margin: 0 0 60px 0;
   display: flex;
-  gap: 60px;                /* メニュー同士の間隔をがっつり広げて横幅を出す */
+  gap: 60px;
   justify-content: center;
 }
 
@@ -37,31 +39,93 @@ body {
   text-decoration: none;
   color: #333333;
   font-weight: bold;
-  font-size: 36px;          /* 文字を大きく */
-  transition: color 0.1s ease; /* 0.1秒かけてふわっと色を変える設定 */
+  font-size: 36px;
+  transition: color 0.1s ease;
+}
+
+.main-nav a:hover {
+  color: #0044cc;
+  text-decoration: underline;
+}
+
+/* 4. 左側に固定表示するサイドメニュー（スクロール時に出現） */
+.fixed-side-nav {
+  position: fixed;
+  top: 30%;
+  left: 30px;              /* 左端から少し離して見やすく */
+  z-index: 1000;
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-20px);
+  transition: all 0.3s ease;
+}
+
+.fixed-side-nav.is-show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.fixed-side-nav ul {
+  list-style: none;
+  padding: 24px 30px;      /* パディングを増やして全体を大きく */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;               /* 項目同士の幅を広げる */
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.fixed-side-nav a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+  font-size: 24px;         /* 文字サイズを大きく変更 */
+  position: relative;      /* 下バーアニメーションの基準 */
+  display: inline-block;
+  padding-bottom: 4px;
+  transition: color 0.2s ease;
+}
+
+/* 💡 ホバー時に伸びる青い下バーの設定 */
+.fixed-side-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;                /* 通常時は長さ0 */
+  height: 3px;             /* 青バーの太さ */
+  background-color: #0044cc; /* バーの色 */
+  transition: width 0.3s ease; /* スーッと伸びる速度 */
 }
 
 /* カーソルを合わせたときの変化 */
-.main-nav a:hover {
-  color: #0044cc;           /* カーソルが乗ったときの青色 */
-  text-decoration: underline; /* 下線を出す */
+.fixed-side-nav a:hover {
+  color: #0044cc;
 }
 
-/* 4. 文章全体のスタイル（今回追加した main タグ用） */
+.fixed-side-nav a:hover::after {
+  width: 100%;             /* カーソルが乗ったら幅100%まで伸びる */
+}
+
+/* 5. 文章全体のスタイル */
 main {
-  max-width: 1000px;        /* 文章が横に広がりすぎないように制限 */
-  width: 90%;               /* スマホで見ても左右に少し隙間を作る */
-  margin-bottom: 100px;     /* フッターとの間の余白 */
+  max-width: 1000px;
+  width: 90%;
+  margin-bottom: 100px;
 }
 
 main p {
-  font-size: 30px;          /* 文章の文字の大きさ（お好みで変えてね） */
-  line-height: 1.8;         /* 行と行の間の隙間を広げて読みやすく */
-  margin-bottom: 20px;      /* 段落（pタグ）ごとの隙間 */
+  font-size: 30px;
+  line-height: 1.8;
+  margin-bottom: 20px;
   color: #333333;
 }
-intro-text-box{
+
+.intro-text-box {
   max-width: 800px;
   margin: 40px auto;
-
 }
