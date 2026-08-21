@@ -1,0 +1,63 @@
+/* 1. 画面全体の高さを確保して、中身を真ん中に寄せる */
+body {
+  margin: 0;
+  height: 100vh;           /* 画面の縦幅いっぱいに広げる */
+  display: flex;
+  justify-content: center; /* 横方向の真ん中 */
+  align-items: center;     /* 縦方向の真ん中 */
+  background-color: #ffffff; /* 背景色（お好みで変えてね） */
+}
+
+/* 2. ロゴとナビゲーションメニューの見た目を整える */
+.page-header {
+  text-align: center;      /* 中の要素をセンタリング */
+}
+
+.logo {
+  max-width: 200px;        /* ロゴの大きさが崩れないように（適宜調整してね） */
+  height: auto;
+  margin-bottom: 20px;     /* ロゴとメニューの間の隙間 */
+}
+
+.main-nav {
+  list-style: none;        /* 点を消す（ress.min.cssで消えてると思うけど念のため） */
+  padding: 0;
+  margin: 0;
+  display: flex;           /* メニューを横並びにする */
+  gap: 20px;               /* メニュー同士の間隔 */
+  justify-content: center; /* 横並びにしたメニューを真ん中に寄せる */
+}
+
+.main-nav a {
+  text-decoration: none;   /* リンクの下線を消す */
+  color: #333333;          /* 文字の色（お好みで変えてね） */
+  font-weight: bold;
+}
+.logo {
+  max-width: 600px;     /* 👈 ロゴの枠（画像）をかなり大きく！ */
+  width: 100%;          /* 画面が狭いときもはみ出さないお守り */
+  height: auto;
+  margin-bottom: 50px;  /* ロゴとメニューの間をどーんと広げる */
+}
+
+.main-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 60px;            /* 👈 メニュー同士の間隔をがっつり広げて横幅を出す */
+  justify-content: center;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+  font-size: 36px;      /* 👈 文字サイズをめちゃくちゃ大きく！ */
+}
+.page-header {
+  text-align: center;
+  
+  /* 👈 これを追加！元の位置から上に少し（10%分）持ち上げる命令だよ */
+  transform: translateY(-10%); 
+}
